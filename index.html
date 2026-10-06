@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOC>_ - World Of Code</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #00ff66; /* Neon Yeşil */
+            --text-color: #c9d1d9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid #30363d;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #161b22 0%, var(--bg-color) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.5px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .course-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .course-header {
+            background-color: #21262d;
+            padding: 1rem;
+            font-weight: bold;
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            background-color: rgba(0, 255, 102, 0.1);
+            color: var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .course-body {
+            padding: 1.5rem;
+        }
+
+        .course-body p {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WOC>_</div>
+        <nav>
+            <a href="#courses">Dersler</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Kodlama Dünyasına <span>Adım At...</span></h1>
+        <p>10-18 yaş arası gençler için en iyi YouTube kodlama derslerini tek bir platformda topladık. Python 3.12, C# ve C++ öğrenmeye hemen başla!</p>
+        <a href="#courses" class="btn">Dersleri Keşfet</a>
+    </section>
+
+    <div class="container" id="courses">
+        <h2 class="section-title">Popüler Kurslar</h2>
+        <div class="courses-grid">
+            <!-- Python 3.12 Kursu -->
+            <div class="course-card">
+                <div class="course-header">
+                    Python 3.12 Eğitimi
+                    <span class="badge">Başlangıç / Orta</span>
+                </div>
+                <div class="course-body">
+                    <p>En güncel Python 3.12 sürümüyle sıfırdan ileri seviyeye kadar temel programlama mantığını, veri yapılarını ve mini projeler geliştirmeyi öğrenin.</p>
+                    <a href="https://www.youtube.com" target="_blank" class="btn">YouTube'da İzle</a>
+                </div>
+            </div>
+
+            <!-- C# Kursu -->
+            <div class="course-card">
+                <div class="course-header">
+                    C# Programlama
+                    <span class="badge">Oyun & Masaüstü</span>
+                </div>
+                <div class="course-body">
+                    <p>Unity ile oyun geliştirmek ve Windows masaüstü uygulamaları yapmak için gereken en popüler nesne yönelimli programlama dili C# dersleri.</p>
+                    <a href="https://www.youtube.com" target="_blank" class="btn">YouTube'da İzle</a>
+                </div>
+            </div>
+
+            <!-- C++ Kursu -->
+            <div class="course-card">
+                <div class="course-header">
+                    C++ Temelleri
+                    <span class="badge">İleri Düzey</span>
+                </div>
+                <div class="course-body">
+                    <p>Yüksek performanslı yazılımlar ve oyun motoru altyapıları geliştirmek isteyenler için en kapsamlı C++ rehberi.</p>
+                    <a href="https://www.youtube.com" target="_blank" class="btn">YouTube'da İzle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 WOC>_ - World Of Code. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
