@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="green">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOC>_ | World Of Code</title>
     <style>
-        :root {
+        /* Tema Renkleri */
+        [data-theme="green"] {
             --bg-color: #0b0f0b;
             --terminal-green: #00ff66;
             --dark-green: #003311;
             --text-color: #c0ffc0;
             --card-bg: #111a11;
             --border-color: #00ff6655;
+            --shadow: rgba(0, 255, 102, 0.2);
+        }
+
+        [data-theme="blue"] {
+            --bg-color: #f0f8ff;
+            --terminal-green: #0077ff;
+            --dark-green: #cce0ff;
+            --text-color: #003366;
+            --card-bg: #ffffff;
+            --border-color: #0077ff44;
+            --shadow: rgba(0, 119, 255, 0.2);
+        }
+
+        [data-theme="matrix"] {
+            --bg-color: #000000;
+            --terminal-green: #00ff00;
+            --dark-green: #002200;
+            --text-color: #00ff00;
+            --card-bg: #050505;
+            --border-color: #00ff0088;
+            --shadow: rgba(0, 255, 0, 0.3);
         }
 
         * {
@@ -26,13 +48,33 @@
             color: var(--text-color);
             line-height: 1.6;
             padding: 20px;
+            transition: 0.3s ease;
         }
 
         header {
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
             border-bottom: 2px dashed var(--terminal-green);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .settings-bar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .settings-bar select, .settings-bar button {
+            background: var(--card-bg);
+            color: var(--terminal-green);
+            border: 1px solid var(--terminal-green);
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
         }
 
         .logo {
@@ -44,12 +86,12 @@
 
         .subtitle {
             font-size: 1.1rem;
-            color: #8aff8a;
+            opacity: 0.8;
             margin-top: 10px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -58,11 +100,12 @@
             margin-bottom: 20px;
             border-left: 4px solid var(--terminal-green);
             padding-left: 10px;
+            margin-top: 30px;
         }
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -73,12 +116,15 @@
             border-radius: 6px;
             padding: 20px;
             transition: 0.3s;
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
+            box-shadow: 0 0 10px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .course-card:hover {
             border-color: var(--terminal-green);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            box-shadow: 0 0 15px var(--shadow);
             transform: translateY(-3px);
         }
 
@@ -88,8 +134,8 @@
         }
 
         .course-card p {
-            font-size: 0.95rem;
-            color: #a0ffa0;
+            font-size: 0.9rem;
+            opacity: 0.9;
             margin-bottom: 20px;
         }
 
@@ -114,11 +160,31 @@
             font-weight: bold;
             border-radius: 4px;
             transition: 0.2s;
+            text-align: center;
         }
 
         .btn:hover {
             background-color: var(--terminal-green);
             color: var(--bg-color);
+        }
+
+        .contact-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-section a {
+            color: var(--terminal-green);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -127,7 +193,7 @@
             border-top: 1px dashed var(--border-color);
             margin-top: 40px;
             font-size: 0.9rem;
-            color: #66cc66;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -135,45 +201,132 @@
 
     <div class="container">
         <header>
+            <div class="settings-bar">
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="en">🇬🇧 English</option>
+                </select>
+                <select id="themeSelect" onchange="changeTheme()">
+                    <option value="green">Neon Yeşil</option>
+                    <option value="blue">Bebek Mavisi & Beyaz</option>
+                    <option value="matrix">Matrix Hacker</option>
+                </select>
+            </div>
             <div class="logo">WOC>_</div>
-            <div class="subtitle">World Of Code | Geçmişin Kodcuları, Geleceğin Teknolojisi</div>
+            <div class="subtitle" id="subText">World Of Code | Geçmişin Kodcuları, Geleceğin Teknolojisi</div>
         </header>
 
         <main>
-            <h2>Popüler Yazılım Dersleri</h2>
+            <h2 id="sectionTitle">Kapsamlı Yazılım Dersleri Kütüphanesi</h2>
             <div class="courses-grid">
                 
-                <!-- Python Kursu -->
+                <!-- Python -->
                 <div class="course-card">
-                    <span class="badge">Başlangıç / Orta</span>
-                    <h3>Python Temelleri</h3>
-                    <p>Sıfırdan ileri seviyeye Python programlama dili ve temel mantığı.</p>
-                    <a href="https://www.youtube.com/watch?v=kqtD5dpn9C8" target="_blank" class="btn">Videoyu İzle -></a>
+                    <div>
+                        <span class="badge">Python</span>
+                        <h3 class="p-title">Python Sıfırdan Zirveye</h3>
+                        <p class="p-desc">Temel sözdiziminden yapay zeka temellerine kadar güncel Python rehberi.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=7wnove7K-ZQ" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
                 </div>
 
-                <!-- C# Kursu -->
+                <!-- C# -->
                 <div class="course-card">
-                    <span class="badge">Orta Düzey</span>
-                    <h3>C# ile Programlama</h3>
-                    <p>Unity ve masaüstü uygulama geliştirmek için temel C# dersleri.</p>
-                    <a href="https://www.youtube.com/watch?v=J_0vqpcuKbs" target="_blank" class="btn">Videoyu İzle -></a>
+                    <div>
+                        <span class="badge">C# / Unity</span>
+                        <h3 class="csharp-title">Modern C# Eğitimi</h3>
+                        <p class="csharp-desc">Konsol uygulamalarından Unity oyun geliştirme süreçlerine güncel C# kursu.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=GhQd28w7Cb0" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
                 </div>
 
-                <!-- C++ Kursu -->
+                <!-- C++ -->
                 <div class="course-card">
-                    <span class="badge">İleri Düzey</span>
-                    <h3>C++ Temelleri</h3>
-                    <p>Yüksek performanslı yazılımlar ve oyun motorları için C++ rehberi.</p>
-                    <a href="https://www.youtube.com/watch?v=_bYmuvqnpUs" target="_blank" class="btn">Videoyu İzle -></a>
+                    <div>
+                        <span class="badge">C++ / Oyun Motoru</span>
+                        <h3 class="cpp-title">C++ Programlama Dili</h3>
+                        <p class="cpp-desc">Yüksek performans, bellek yönetimi ve Unreal Engine için güncel C++ dersleri.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
                 </div>
 
+                <!-- Java -->
+                <div class="course-card">
+                    <div>
+                        <span class="badge">Java / Android</span>
+                        <h3 class="java-title">Java Programlama Temelleri</h3>
+                        <p class="java-desc">Nesne yönelimli programlama (OOP) ve Android uygulama temelleri.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=A74g4SmdriU" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="course-card">
+                    <div>
+                        <span class="badge">Web / JavaScript</span>
+                        <h3 class="js-title">Modern JavaScript (ES6+)</h3>
+                        <p class="js-desc">İnteraktif web siteleri ve tarayıcı uygulamaları geliştirmek için güncel JS dersleri.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=W6NZbCOuifw" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
+                </div>
+
+                <!-- HTML & CSS -->
+                <div class="course-card">
+                    <div>
+                        <span class="badge">Web Tasarım</span>
+                        <h3 class="web-title">Sıfırdan Web Tasarım (HTML & CSS)</h3>
+                        <p class="web-desc">Kendi web sitelerini tasarlamak ve stillendirmek isteyenler için güncel rehber.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=G3e-cpL7otg" target="_blank" class="btn" data-btn>Videoyu İzle -></a>
+                </div>
+
+            </div>
+
+            <div class="contact-section">
+                <h3 id="contactTitle">İletişim & Destek</h3>
+                <p id="contactDesc">Sorularınız veya projeleriniz için bana Instagram üzerinden ulaşabilirsiniz:</p>
+                <p>Instagram: <a href="https://instagram.com" target="_blank">WOC>_</a></p>
             </div>
         </main>
 
         <footer>
-            <p>&copy; 2026 WOC>_ - World Of Code. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 WOC>_ - World Of Code. <span id="footerText">Tüm hakları saklıdır.</span></p>
         </footer>
     </div>
 
+    <script>
+        // Tema Değiştirme Fonksiyonu
+        function changeTheme() {
+            const selectedTheme = document.getElementById('themeSelect').value;
+            document.documentElement.setAttribute('data-theme', selectedTheme);
+        }
+
+        // Dil Değiştirme Fonksiyonu (Türkçe / İngilizce)
+        function changeLanguage() {
+            const lang = document.getElementById('languageSelect').value;
+            const subText = document.getElementById('subText');
+            const sectionTitle = document.getElementById('sectionTitle');
+            const contactTitle = document.getElementById('contactTitle');
+            const contactDesc = document.getElementById('contactDesc');
+            const footerText = document.getElementById('footerText');
+            const btns = document.querySelectorAll('[data-btn]');
+
+            if (lang === 'en') {
+                subText.innerText = "World Of Code | Coders of the Past, Technology of the Future";
+                sectionTitle.innerText = "Comprehensive Programming Courses Library";
+                contactTitle.innerText = "Contact & Support";
+                contactDesc.innerText = "You can reach me via Instagram for your questions or projects:";
+                footerText.innerText = "All rights reserved.";
+                btns.forEach(btn => btn.innerText = "Watch Video ->");
+            } else {
+                subText.innerText = "World Of Code | Geçmişin Kodcuları, Geleceğin Teknolojisi";
+                sectionTitle.innerText = "Kapsamlı Yazılım Dersleri Kütüphanesi";
+                contactTitle.innerText = "İletişim & Destek";
+                contactDesc.innerText = "Sorularınız veya projeleriniz için bana Instagram üzerinden ulaşabilirsiniz:";
+                footerText.innerText = "Tüm hakları saklıdır.";
+                btns.forEach(btn => btn.innerText = "Videoyu İzle ->");
+            }
+        }
+    </script>
 </body>
 </html>
