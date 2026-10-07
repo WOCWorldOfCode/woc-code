@@ -154,6 +154,7 @@
             display: flex;
             gap: 10px;
             margin: 15px 0;
+            flex-wrap: wrap;
         }
 
         .content-box {
@@ -171,13 +172,41 @@
             display: block;
         }
 
-        .video-card-container {
+        .resource-card {
             margin-top: 15px;
-            padding: 25px;
+            padding: 20px;
             background: var(--card-bg);
-            border: 2px dashed var(--accent-color);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
-            text-align: center;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--accent-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            transform: translateY(-2px);
         }
 
         .watch-btn {
@@ -193,11 +222,9 @@
             font-size: 1.1rem;
             margin-top: 15px;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-            transition: transform 0.2s;
         }
 
         .watch-btn:hover {
-            transform: scale(1.05);
             background: #cc0000;
             color: #fff;
         }
@@ -234,10 +261,10 @@
             </div>
         </header>
 
-        <!-- KAPSAMLI YAZILIM DİLLERİ VE VİDEO EĞİTİM MERKEZİ -->
+        <!-- KAPSAMLI YAZILIM DİLLERİ VE İNDİRME MERKEZİ -->
         <section>
-            <h2 id="main-section-title"><i class="fa-solid fa-graduation-cap"></i> Kapsamlı Yazılım Dilleri & Video Eğitim Rehberi</h2>
-            <p style="margin-bottom: 20px; opacity: 0.8;" id="main-section-desc">Aşağıdan öğrenmek istediğin yazılım dilini seçebilir, ister detaylı kapsamlı okuma modunu inceleyebilir ister 4 farklı dildeki profesyonel eğitim videolarını izleyebilirsin.</p>
+            <h2 id="main-section-title"><i class="fa-solid fa-code"></i> Yazılım Dilleri, İndirme Linkleri & Kod Editörleri</h2>
+            <p style="margin-bottom: 20px; opacity: 0.8;" id="main-section-desc">Aşağıdan dilediğin yazılım dilini seçerek hem detaylı notları inceleyebilir, hem resmi indirme sayfalarına ulaşabilir, hem evrensel kod editörlerini indirebilir hem de eğitim videolarını izleyebilirsin.</p>
 
             <!-- Dil Sekmeleri -->
             <div class="lang-tabs">
@@ -251,136 +278,172 @@
 
             <!-- 1. PYTHON MODÜLÜ -->
             <div id="mod-python" class="module-content active">
-                <h3 style="color: var(--secondary-color);">Python ile Sıfırdan Uzmanlığa Yazılım Eğitimi</h3>
+                <h3 style="color: var(--secondary-color);">Python Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('py-read', 'py-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('py-watch', 'py-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('py-read', 'py-download', 'py-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('py-download', 'py-read', 'py-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">Dil & Terminal İndir</span></button>
+                    <button onclick="toggleBox('py-watch', 'py-read', 'py-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="py-read" class="content-box">
                     <strong>BÖLÜM 1: Giriş ve Temel Kavramlar</strong>
-                    Python, Guido van Rossum tarafından 1991 yılında geliştirilmiş yüksek seviyeli, yorumlanabilir bir programlama dilidir. Sözdizimi insan diline çok yakın olduğu için öğrenmesi oldukça kolaydır. Değişkenler, verileri hafızada tutmamızı sağlayan etiketlerdir.
-
-                    <strong>BÖLÜM 2: Veri Tipleri ve Operatörler</strong>
-                    - int: Tam sayılar
-                    - float: Ondalıklı sayılar
-                    - str: Metin ifadeleri
-                    - bool: Mantıksal değerler (True / False)
-
-                    <strong>BÖLÜM 3: Koşullu Durumlar (If-Else) ve Döngüler</strong>
-                    Programların karar mekanizmaları oluşturmasını sağlar. For ve While döngüleriyle tekrarlayan işlemleri otomatikleştiririz.
+                    Python, yapay zeka, otomasyon ve masaüstü yazılımlarında kullanılan en popüler dildir.
                 </div>
 
-                <div id="py-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen Python Eğitim Videosu:</p>
-                        <a id="link-python" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="py-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 Python ve Kod Terminali / Editör İndirme Linkleri:</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px;">Bilgisayarınızda Python kodu çalıştırabilmek için önce Python yorumlayıcısını, ardından bir kod terminali/editörünü kurmalısınız.</p>
+                    <div class="resource-grid">
+                        <a href="https://www.python.org/downloads/" target="_blank" class="download-btn"><i class="fa-brands fa-python"></i> Python İndir (Resmi)</a>
+                        <a href="https://code.visualstudio.com/" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i> VS Code (Önerilen Editör)</a>
+                        <a href="https://www.jetbrains.com/pycharm/download/" target="_blank" class="download-btn"><i class="fa-solid fa-terminal"></i> PyCharm (IDE)</a>
                     </div>
+                </div>
+
+                <div id="py-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Python Eğitim Videosu:</p>
+                    <a id="link-python" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
 
             <!-- 2. JAVASCRIPT MODÜLÜ -->
             <div id="mod-javascript" class="module-content">
-                <h3 style="color: var(--secondary-color);">JavaScript ile Web'e Can Verin</h3>
+                <h3 style="color: var(--secondary-color);">JavaScript Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('js-read', 'js-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('js-watch', 'js-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('js-read', 'js-download', 'js-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('js-download', 'js-read', 'js-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">Dil & Terminal İndir</span></button>
+                    <button onclick="toggleBox('js-watch', 'js-read', 'js-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="js-read" class="content-box">
                     <strong>BÖLÜM 1: JavaScript Temelleri</strong>
-                    Tarayıcı üzerinde çalışan ve web sitelerine dinamik özellikler kazandıran dildir. Let ve Const tanımlamaları, fonksiyonlar ve DOM manipülasyonu temel konularıdır.
+                    Tarayıcılarda ve Node.js ile sunucu tarafında çalışan dinamik web dilidir.
                 </div>
 
-                <div id="js-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen JavaScript Eğitim Videosu:</p>
-                        <a id="link-javascript" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="js-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 Node.js (Terminal/Çalışma Ortamı) ve Editör Linkleri:</h4>
+                    <div class="resource-grid">
+                        <a href="https://nodejs.org/" target="_blank" class="download-btn"><i class="fa-brands fa-node-js"></i> Node.js İndir (Terminal)</a>
+                        <a href="https://code.visualstudio.com/" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i> VS Code İndir</a>
                     </div>
+                </div>
+
+                <div id="js-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">JavaScript Eğitim Videosu:</p>
+                    <a id="link-javascript" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
 
             <!-- 3. C++ MODÜLÜ -->
             <div id="mod-cpp" class="module-content">
-                <h3 style="color: var(--secondary-color);">C++ ile Yüksek Performanslı Yazılım</h3>
+                <h3 style="color: var(--secondary-color);">C++ Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('cpp-read', 'cpp-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('cpp-watch', 'cpp-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('cpp-read', 'cpp-download', 'cpp-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('cpp-download', 'cpp-read', 'cpp-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">Derleyici & Terminal İndir</span></button>
+                    <button onclick="toggleBox('cpp-watch', 'cpp-read', 'cpp-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="cpp-read" class="content-box">
-                    <strong>BÖLÜM 1: C++ ve Bellek Yönetimi</strong>
-                    Oyun motorları ve sistem yazılımlarında kullanılan güçlü bir dildir. Nesne yönelimli programlama (OOP) altyapısı sunar.
+                    <strong>BÖLÜM 1: C++ Temelleri</strong>
+                    Yüksek performanslı oyun motorları ve sistem programlama için güçlü dildir.
                 </div>
 
-                <div id="cpp-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen C++ Eğitim Videosu:</p>
-                        <a id="link-cpp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="cpp-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 C++ Derleyicileri ve IDE Linkleri:</h4>
+                    <div class="resource-grid">
+                        <a href="https://visualstudio.microsoft.com/" target="_blank" class="download-btn"><i class="fa-solid fa-laptop-code"></i> Visual Studio (C++ IDE)</a>
+                        <a href="https://www.mingw-w64.org/" target="_blank" class="download-btn"><i class="fa-solid fa-terminal"></i> MinGW-w64 (Derleyici)</a>
+                        <a href="https://code.visualstudio.com/" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i> VS Code İndir</a>
                     </div>
+                </div>
+
+                <div id="cpp-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">C++ Eğitim Videosu:</p>
+                    <a id="link-cpp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
 
             <!-- 4. C# MODÜLÜ -->
             <div id="mod-csharp" class="module-content">
-                <h3 style="color: var(--secondary-color);">C# ve .NET ile Uygulama Geliştirme</h3>
+                <h3 style="color: var(--secondary-color);">C# Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('cs-read', 'cs-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('cs-watch', 'cs-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('cs-read', 'cs-download', 'cs-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('cs-download', 'cs-read', 'cs-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">.NET SDK & IDE İndir</span></button>
+                    <button onclick="toggleBox('cs-watch', 'cs-read', 'cs-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="cs-read" class="content-box">
-                    <strong>BÖLÜM 1: C# Dilinin Temelleri</strong>
-                    Microsoft tarafından geliştirilen, Unity oyun motorunda ve masaüstü uygulamalarında kullanılan nesne yönelimli dildir.
+                    <strong>BÖLÜM 1: C# Temelleri</strong>
+                    Unity oyun motoru ve Microsoft .NET platformu için geliştirilmiş nesne yönelimli dildir.
                 </div>
 
-                <div id="cs-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen C# Eğitim Videosu:</p>
-                        <a id="link-csharp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="cs-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 .NET SDK ve Geliştirme Araçları:</h4>
+                    <div class="resource-grid">
+                        <a href="https://dotnet.microsoft.com/download" target="_blank" class="download-btn"><i class="fa-solid fa-cube"></i> .NET SDK İndir</a>
+                        <a href="https://visualstudio.microsoft.com/" target="_blank" class="download-btn"><i class="fa-solid fa-laptop-code"></i> Visual Studio İndir</a>
                     </div>
+                </div>
+
+                <div id="cs-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">C# Eğitim Videosu:</p>
+                    <a id="link-csharp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
 
             <!-- 5. JAVA MODÜLÜ -->
             <div id="mod-java" class="module-content">
-                <h3 style="color: var(--secondary-color);">Java ile Kurumsal Sistemler</h3>
+                <h3 style="color: var(--secondary-color);">Java Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('java-read', 'java-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('java-watch', 'java-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('java-read', 'java-download', 'java-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('java-download', 'java-read', 'java-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">JDK & IDE İndir</span></button>
+                    <button onclick="toggleBox('java-watch', 'java-read', 'java-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="java-read" class="content-box">
-                    <strong>BÖLÜM 1: Java Mimarisi</strong>
-                    JVM tabanlı çalışan, Android uygulama geliştirmede ve büyük ölçekli sistemlerde yaygın olarak tercih edilen dildir.
+                    <strong>BÖLÜM 1: Java Temelleri</strong>
+                    Android uygulamaları ve büyük ölçekli kurumsal sistemler için standart dildir.
                 </div>
 
-                <div id="java-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen Java Eğitim Videosu:</p>
-                        <a id="link-java" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="java-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 Java Development Kit (JDK) ve IDE Linkleri:</h4>
+                    <div class="resource-grid">
+                        <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank" class="download-btn"><i class="fa-brands fa-java"></i> Java JDK İndir</a>
+                        <a href="https://www.jetbrains.com/idea/download/" target="_blank" class="download-btn"><i class="fa-solid fa-laptop-code"></i> IntelliJ IDEA İndir</a>
                     </div>
+                </div>
+
+                <div id="java-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Java Eğitim Videosu:</p>
+                    <a id="link-java" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
 
             <!-- 6. HTML & CSS MODÜLÜ -->
             <div id="mod-htmlcss" class="module-content">
-                <h3 style="color: var(--secondary-color);">HTML5 ve CSS3 ile Web Tasarımı</h3>
+                <h3 style="color: var(--secondary-color);">HTML & CSS Geliştirme Merkezi</h3>
                 <div class="toggle-btns">
-                    <button onclick="toggleBox('html-read', 'html-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
-                    <button onclick="toggleBox('html-watch', 'html-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
+                    <button onclick="toggleBox('html-read', 'html-download', 'html-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuma Notları</span></button>
+                    <button onclick="toggleBox('html-download', 'html-read', 'html-watch')"><i class="fa-solid fa-download"></i> <span class="btn-text-dl">Tarayıcı & Editör İndir</span></button>
+                    <button onclick="toggleBox('html-watch', 'html-read', 'html-download')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Video Eğitimi</span></button>
                 </div>
                 
                 <div id="html-read" class="content-box">
                     <strong>BÖLÜM 1: Web Tasarım Temelleri</strong>
-                    Web sitelerinin iskeletini oluşturan HTML ve görsel stillerini yöneten CSS ile modern arayüzler tasarlayın.
+                    Web sitelerinin iskeletini ve tasarımını oluşturan temel teknolojilerdir.
                 </div>
 
-                <div id="html-watch" class="content-box">
-                    <div class="video-card-container">
-                        <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen HTML/CSS Eğitim Videosu:</p>
-                        <a id="link-htmlcss" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
+                <div id="html-download" class="content-box">
+                    <h4 style="color: var(--accent-color); margin-bottom: 10px;">📥 Web Editörleri ve Canlı Önizleme Araçları:</h4>
+                    <div class="resource-grid">
+                        <a href="https://code.visualstudio.com/" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i> VS Code (En İyisi)</a>
+                        <a href="https://www.google.com/chrome/" target="_blank" class="download-btn"><i class="fa-brands fa-chrome"></i> Google Chrome İndir</a>
                     </div>
+                </div>
+
+                <div id="html-watch" class="content-box" style="text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">HTML/CSS Eğitim Videosu:</p>
+                    <a id="link-htmlcss" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                 </div>
             </div>
         </section>
@@ -393,38 +456,42 @@
     <script>
         const uiTranslations = {
             tr: {
-                mainTitle: "Kapsamlı Yazılım Dilleri & Video Eğitim Rehberi",
-                mainDesc: "Aşağıdan öğrenmek istediğin yazılım dilini seçebilir, ister detaylı kapsamlı okuma modunu inceleyebilir ister 4 farklı dildeki profesyonel eğitim videolarına ulaşabilirsin.",
-                btnRead: "Okuyarak Anla (Detaylı Notlar)",
-                btnWatch: "Videoyu İzle",
-                vidText: "Seçtiğiniz dile göre güncellenen Eğitim Videosu:",
+                mainTitle: "Yelizim Dilleri, İndirme Linkleri & Kod Editörleri",
+                mainDesc: "Aşağıdan dilediğin yazılım dilini seçerek hem detaylı notları inceleyebilir, hem resmi indirme sayfalarına ulaşabilir, hem evrensel kod editörlerini indirebilir hem de eğitim videolarını izleyebilirsin.",
+                btnRead: "Okuma Notları",
+                btnDl: "Dil & Terminal İndir",
+                btnWatch: "Video Eğitimi",
+                vidText: "Eğitim Videosu:",
                 btnYoutube: "YouTube'da İzle",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Tüm Hakları Saklıdır."
             },
             en: {
-                mainTitle: "Comprehensive Programming Languages & Video Training Hub",
-                mainDesc: "Select a programming language below to read detailed study notes or access professional training videos in 4 different languages.",
-                btnRead: "Read & Understand (Detailed Notes)",
-                btnWatch: "Watch Video",
-                vidText: "Training video updated according to your selected language:",
+                mainTitle: "Programming Languages, Download Links & Code Editors",
+                mainDesc: "Select a language below to read notes, access official download links, code editors, and training videos.",
+                btnRead: "Study Notes",
+                btnDl: "Download Tools",
+                btnWatch: "Video Training",
+                vidText: "Training Video:",
                 btnYoutube: "Watch on YouTube",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - All Rights Reserved."
             },
             de: {
-                mainTitle: "Umfassende Programmiersprachen & Video-Schulungszentrum",
-                mainDesc: "Wählen Sie unten eine Programmiersprache aus, um detaillierte Notizen zu lesen oder professionelle Schulungsvideos in 4 Sprachen anzusehen.",
-                btnRead: "Lesen & Verstehen (Detaillierte Notizen)",
-                btnWatch: "Video Ansehen",
-                vidText: "Schulungsvideo aktualisiert basierend auf Ihrer Sprache:",
+                mainTitle: "Programmiersprachen, Downloads & Code-Editoren",
+                mainDesc: "Wählen Sie eine Sprache aus, um Notizen zu lesen, offizielle Downloads zu erhalten und Videos anzusehen.",
+                btnRead: "Notizen",
+                btnDl: "Tools herunterladen",
+                btnWatch: "Video",
+                vidText: "Schulungsvideo:",
                 btnYoutube: "Auf YouTube ansehen",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Alle Rechte vorbehalten."
             },
             fr: {
-                mainTitle: "Hub Complet de Programmation et Vidéos de Formation",
-                mainDesc: "Sélectionnez un langage ci-dessous pour lire des notes détaillées ou accéder à des vidéos de formation professionnelles en 4 langues.",
-                btnRead: "Lire & Comprendre (Notes Détaillées)",
-                btnWatch: "Regarder la Vidéo",
-                vidText: "Vidéo de formation mise à jour selon la langue sélectionnée :",
+                mainTitle: "Langages, Liens de Téléchargement et Éditeurs",
+                mainDesc: "Sélectionnez un langage pour lire les notes, télécharger les outils officiels et regarder les vidéos.",
+                btnRead: "Notes",
+                btnDl: "Télécharger",
+                btnWatch: "Vidéo",
+                vidText: "Vidéo de formation :",
                 btnYoutube: "Regarder sur YouTube",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Tous droits réservés."
             }
@@ -481,12 +548,14 @@
             updateAllLinks();
         }
 
-        function toggleBox(showId, hideId) {
+        function toggleBox(showId, hide1, hide2) {
             const showEl = document.getElementById(showId);
-            const hideEl = document.getElementById(hideId);
+            const h1 = document.getElementById(hide1);
+            const h2 = document.getElementById(hide2);
             
             showEl.classList.toggle('active');
-            hideEl.classList.remove('active');
+            if(h1) h1.classList.remove('active');
+            if(h2) h2.classList.remove('active');
 
             updateAllLinks();
         }
@@ -510,11 +579,12 @@
             currentInterfaceLang = lang;
             const t = uiTranslations[lang];
 
-            document.getElementById('main-section-title').innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${t.mainTitle}`;
+            document.getElementById('main-section-title').innerHTML = `<i class="fa-solid fa-code"></i> ${t.mainTitle}`;
             document.getElementById('main-section-desc').innerText = t.mainDesc;
             document.getElementById('footer-text').innerHTML = t.footer;
 
             document.querySelectorAll('.btn-text-read').forEach(el => el.innerText = t.btnRead);
+            document.querySelectorAll('.btn-text-dl').forEach(el => el.innerText = t.btnDl);
             document.querySelectorAll('.btn-text-watch').forEach(el => el.innerText = t.btnWatch);
             document.querySelectorAll('.video-instruction').forEach(el => el.innerText = t.vidText);
             document.querySelectorAll('.btn-yt-text').forEach(el => el.innerText = t.btnYoutube);
@@ -522,7 +592,6 @@
             updateAllLinks();
         }
 
-        // Sayfa yüklendiğinde tüm linkleri anında doldur
         updateAllLinks();
     </script>
 </body>
