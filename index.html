@@ -241,12 +241,12 @@
 
             <!-- Dil Sekmeleri -->
             <div class="lang-tabs">
-                <button class="lang-tab active" onclick="switchLanguageModule('python')">Python</button>
-                <button class="lang-tab" onclick="switchLanguageModule('javascript')">JavaScript</button>
-                <button class="lang-tab" onclick="switchLanguageModule('cpp')">C++</button>
-                <button class="lang-tab" onclick="switchLanguageModule('csharp')">C#</button>
-                <button class="lang-tab" onclick="switchLanguageModule('java')">Java</button>
-                <button class="lang-tab" onclick="switchLanguageModule('htmlcss')">HTML & CSS</button>
+                <button class="lang-tab active" onclick="switchLanguageModule('python', event)">Python</button>
+                <button class="lang-tab" onclick="switchLanguageModule('javascript', event)">JavaScript</button>
+                <button class="lang-tab" onclick="switchLanguageModule('cpp', event)">C++</button>
+                <button class="lang-tab" onclick="switchLanguageModule('csharp', event)">C#</button>
+                <button class="lang-tab" onclick="switchLanguageModule('java', event)">Java</button>
+                <button class="lang-tab" onclick="switchLanguageModule('htmlcss', event)">HTML & CSS</button>
             </div>
 
             <!-- 1. PYTHON MODÜLÜ -->
@@ -274,8 +274,7 @@
                 <div id="py-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen Python Eğitim Videosu:</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px;">YouTube dış sitelerde oynatmayı engellediği için videoyu güvenle ve hatasız izlemek için aşağıdaki butona tıklayabilirsin:</p>
-                        <a id="link-py" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-python" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
@@ -296,7 +295,7 @@
                 <div id="js-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen JavaScript Eğitim Videosu:</p>
-                        <a id="link-js" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-javascript" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
@@ -317,7 +316,7 @@
                 <div id="cpp-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen C++ Eğitim Videosu:</p>
-                        <a id="link-cpp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-cpp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
@@ -338,7 +337,7 @@
                 <div id="cs-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen C# Eğitim Videosu:</p>
-                        <a id="link-cs" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-csharp" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
@@ -359,14 +358,14 @@
                 <div id="java-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen Java Eğitim Videosu:</p>
-                        <a id="link-java" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-java" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
 
             <!-- 6. HTML & CSS MODÜLÜ -->
             <div id="mod-htmlcss" class="module-content">
-                <h3 style="color: var(--secondary-color);">HTML5 and CSS3 Web Design</h3>
+                <h3 style="color: var(--secondary-color);">HTML5 ve CSS3 ile Web Tasarımı</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleBox('html-read', 'html-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
                     <button onclick="toggleBox('html-watch', 'html-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
@@ -380,7 +379,7 @@
                 <div id="html-watch" class="content-box">
                     <div class="video-card-container">
                         <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen HTML/CSS Eğitim Videosu:</p>
-                        <a id="link-html" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> YouTube'da İzle</a>
+                        <a id="link-htmlcss" href="#" target="_blank" class="watch-btn"><i class="fa-brands fa-youtube"></i> <span class="btn-yt-text">YouTube'da İzle</span></a>
                     </div>
                 </div>
             </div>
@@ -397,7 +396,7 @@
                 mainTitle: "Kapsamlı Yazılım Dilleri & Video Eğitim Rehberi",
                 mainDesc: "Aşağıdan öğrenmek istediğin yazılım dilini seçebilir, ister detaylı kapsamlı okuma modunu inceleyebilir ister 4 farklı dildeki profesyonel eğitim videolarına ulaşabilirsin.",
                 btnRead: "Okuyarak Anla (Detaylı Notlar)",
-                btnWatch: "Videoya Git",
+                btnWatch: "Videoyu İzle",
                 vidText: "Seçtiğiniz dile göre güncellenen Eğitim Videosu:",
                 btnYoutube: "YouTube'da İzle",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Tüm Hakları Saklıdır."
@@ -406,7 +405,7 @@
                 mainTitle: "Comprehensive Programming Languages & Video Training Hub",
                 mainDesc: "Select a programming language below to read detailed study notes or access professional training videos in 4 different languages.",
                 btnRead: "Read & Understand (Detailed Notes)",
-                btnWatch: "Go to Video",
+                btnWatch: "Watch Video",
                 vidText: "Training video updated according to your selected language:",
                 btnYoutube: "Watch on YouTube",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - All Rights Reserved."
@@ -415,7 +414,7 @@
                 mainTitle: "Umfassende Programmiersprachen & Video-Schulungszentrum",
                 mainDesc: "Wählen Sie unten eine Programmiersprache aus, um detaillierte Notizen zu lesen oder professionelle Schulungsvideos in 4 Sprachen anzusehen.",
                 btnRead: "Lesen & Verstehen (Detaillierte Notizen)",
-                btnWatch: "Zum Video",
+                btnWatch: "Video Ansehen",
                 vidText: "Schulungsvideo aktualisiert basierend auf Ihrer Sprache:",
                 btnYoutube: "Auf YouTube ansehen",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Alle Rechte vorbehalten."
@@ -424,7 +423,7 @@
                 mainTitle: "Hub Complet de Programmation et Vidéos de Formation",
                 mainDesc: "Sélectionnez un langage ci-dessous pour lire des notes détaillées ou accéder à des vidéos de formation professionnelles en 4 langues.",
                 btnRead: "Lire & Comprendre (Notes Détaillées)",
-                btnWatch: "Voir la Vidéo",
+                btnWatch: "Regarder la Vidéo",
                 vidText: "Vidéo de formation mise à jour selon la langue sélectionnée :",
                 btnYoutube: "Regarder sur YouTube",
                 footer: "WOC>_ World Of Code Hub &copy; 2026 - Tous droits réservés."
@@ -433,51 +432,53 @@
 
         const videosData = {
             tr: {
-                py: "_uQrJ0TkZlc",
-                js: "W6NZfCO5SIk",
+                python: "_uQrJ0TkZlc",
+                javascript: "W6NZfCO5SIk",
                 cpp: "vLnPwxZdW4Y",
-                cs: "iksc_vzn45w",
+                csharp: "iksc_vzn45w",
                 java: "Hgt_OkdGHkg",
-                html: "1PnVor36_40"
+                htmlcss: "1PnVor36_40"
             },
             en: {
-                py: "rfscVS0vtbw",
-                js: "jS4aFq5-91M",
+                python: "rfscVS0vtbw",
+                javascript: "jS4aFq5-91M",
                 cpp: "vLnPwxZdW4Y",
-                cs: "GhQdlIFylQ8",
+                csharp: "GhQdlIFylQ8",
                 java: "A74TOX803D0",
-                html: "mU6anWqZJcc"
+                htmlcss: "mU6anWqZJcc"
             },
             de: {
-                py: "Z1Yd7upQsXY",
-                js: "1-W1muuB1wU",
+                python: "Z1Yd7upQsXY",
+                javascript: "1-W1muuB1wU",
                 cpp: "V9V8_3P8a-4",
-                cs: "32b2l6CfhCA",
+                csharp: "32b2l6CfhCA",
                 java: "5u8Xh_V6k60",
-                html: "Y2V6yj0FSAc"
+                htmlcss: "Y2V6yj0FSAc"
             },
             fr: {
-                py: "5mXJzwM_k1U",
-                js: "8bO7a6Cj9Qk",
+                python: "5mXJzwM_k1U",
+                javascript: "8bO7a6Cj9Qk",
                 cpp: "X5R-L_6K_0g",
-                cs: "ZtW9yV1vH3U",
+                csharp: "ZtW9yV1vH3U",
                 java: "8cmxvhhmKuA",
-                html: "3JluqTojuME"
+                htmlcss: "3JluqTojuME"
             }
         };
 
         let currentActiveLang = 'python';
         let currentInterfaceLang = 'tr';
 
-        function switchLanguageModule(langKey) {
+        function switchLanguageModule(langKey, event) {
             currentActiveLang = langKey;
             document.querySelectorAll('.lang-tab').forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            if(event && event.target) {
+                event.target.classList.add('active');
+            }
 
             document.querySelectorAll('.module-content').forEach(mod => mod.classList.remove('active'));
             document.getElementById('mod-' + langKey).classList.add('active');
 
-            updateVideoPlayer();
+            updateAllLinks();
         }
 
         function toggleBox(showId, hideId) {
@@ -487,29 +488,18 @@
             showEl.classList.toggle('active');
             hideEl.classList.remove('active');
 
-            if(showId.includes('watch')) {
-                updateVideoPlayer();
-            }
+            updateAllLinks();
         }
 
-        function updateVideoPlayer() {
-            const videoId = videosData[currentInterfaceLang][currentActiveLang];
-            const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
-            
-            const linkMap = {
-                python: 'link-py',
-                javascript: 'link-js',
-                cpp: 'link-cpp',
-                csharp: 'link-cs',
-                java: 'link-java',
-                htmlcss: 'link-html'
-            };
-
-            const linkId = linkMap[currentActiveLang];
-            const linkElement = document.getElementById(linkId);
-            if(linkElement) {
-                linkElement.href = watchUrl;
-            }
+        function updateAllLinks() {
+            const langs = ['python', 'javascript', 'cpp', 'csharp', 'java', 'htmlcss'];
+            langs.forEach(lang => {
+                const videoId = videosData[currentInterfaceLang][lang];
+                const linkEl = document.getElementById('link-' + lang);
+                if(linkEl && videoId) {
+                    linkEl.href = `https://www.youtube.com/watch?v=${videoId}`;
+                }
+            });
         }
 
         function changeTheme(theme) {
@@ -527,13 +517,13 @@
             document.querySelectorAll('.btn-text-read').forEach(el => el.innerText = t.btnRead);
             document.querySelectorAll('.btn-text-watch').forEach(el => el.innerText = t.btnWatch);
             document.querySelectorAll('.video-instruction').forEach(el => el.innerText = t.vidText);
-            document.querySelectorAll('.watch-btn').forEach(el => el.innerHTML = `<i class="fa-brands fa-youtube"></i> ${t.btnYoutube}`);
+            document.querySelectorAll('.btn-yt-text').forEach(el => el.innerText = t.btnYoutube);
 
-            updateVideoPlayer();
+            updateAllLinks();
         }
 
-        // İlk yüklemede linkleri set et
-        updateVideoPlayer();
+        // Sayfa yüklendiğinde tüm linkleri anında doldur
+        updateAllLinks();
     </script>
 </body>
 </html>
