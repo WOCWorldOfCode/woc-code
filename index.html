@@ -276,44 +276,46 @@
             <!-- Lesson 1 -->
             <div class="lesson-card">
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" class="lesson-thumb" alt="Python Ders Kapak">
-                <h3 id="l1-title">Modül 1: Python ile Temel Programlama</h3>
+                <h3 id="l1-title" data-i18n="l1_title_text">Modül 1: Python ile Temel Programlama</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleContent('l1-read', 'l1-watch')"><i class="fa-solid fa-book-open"></i> <span data-i18n="btn_read">Okuyarak Anla</span></button>
                     <button onclick="toggleContent('l1-watch', 'l1-read')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_watch">İzle & Video</span></button>
                 </div>
                 
                 <div id="l1-read" class="content-box">
-                    <h4 data-i18n="l1_read_head">Metin Anlatımı (Okuma Modu)</h4>
-                    <p data-i18n="l1_read_desc">Python, okunabilirliği yüksek, öğrenmesi son derece kolay modern bir programlama dilidir. Değişken tanımlama, döngüler ve fonksiyonlar ile harika yazılımlar geliştirebilirsin.</p>
-                    <br>
-                    <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank" style="color:var(--secondary-color); font-weight:bold;"><i class="fa-brands fa-youtube"></i> <span data-i18n="direct_video_link">Doğrudan Video Bağlantısına Git (İzlemek istersen)</span></a>
+                    <h4 data-i18n="l1_read_head">Detaylı Kapsamlı Anlatım (Okuma Modu)</h4>
+                    <p id="l1-desc-text" style="white-space: pre-line;" data-i18n="l1_read_desc">Python, okunabilirliği yüksek, öğrenmesi son derece kolay modern bir programlama dilidir...</p>
                 </div>
 
                 <div id="l1-watch" class="content-box">
-                    <h4>Video Oynatma Ekranı</h4>
-                    <iframe width="100%" height="250" src="https://www.youtube-nocookie.com/embed/_uQrJ0TkZlc" title="Python Video" frameborder="0" allowfullscreen style="border-radius:6px;"></iframe>
+                    <h4 data-i18n="video_screen_title">Video Oynatma Ekranı</h4>
+                    <!-- 4 Dilli Video Oynatıcı Alanı -->
+                    <div id="video-container-1" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius:6px; margin-top:10px;">
+                        <!-- iframe dinamik olarak JavaScript ile dile göre yüklenecek -->
+                    </div>
                 </div>
             </div>
 
             <!-- Lesson 2 -->
             <div class="lesson-card">
                 <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&auto=format&fit=crop&q=80" class="lesson-thumb" alt="Web Geliştirme Kapak">
-                <h3 id="l2-title">Modül 2: HTML5 ve CSS3 Temelleri</h3>
+                <h3 id="l2-title" data-i18n="l2_title_text">Modül 2: HTML5 ve CSS3 Temelleri</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleContent('l2-read', 'l2-watch')"><i class="fa-solid fa-book-open"></i> <span data-i18n="btn_read">Okuyarak Anla</span></button>
                     <button onclick="toggleContent('l2-watch', 'l2-read')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_watch">İzle & Video</span></button>
                 </div>
                 
                 <div id="l2-read" class="content-box">
-                    <h4 data-i18n="l2_read_head">Metin Anlatımı (Okuma Modu)</h4>
-                    <p data-i18n="l2_read_desc">Web sitelerinin iskeletini HTML oluşturur, görsel tasarımı ve stillerini ise CSS yönetir. Duyarlı (responsive) tasarımlar yaparak her ekranda harika duran siteler tasarlayabilirsin.</p>
-                    <br>
-                    <a href="https://www.youtube.com/watch?v=9gVQ9kyUNfM" target="_blank" style="color:var(--secondary-color); font-weight:bold;"><i class="fa-brands fa-youtube"></i> <span data-i18n="direct_video_link">Doğrudan Video Bağlantısına Git (İzlemek istersen)</span></a>
+                    <h4 data-i18n="l2_read_head">Detaylı Kapsamlı Anlatım (Okuma Modu)</h4>
+                    <p id="l2-desc-text" style="white-space: pre-line;" data-i18n="l2_read_desc">Web sitelerinin iskeletini HTML oluşturur, görsel tasarımı ve stillerini ise CSS yönetir...</p>
                 </div>
 
                 <div id="l2-watch" class="content-box">
-                    <h4>Video Oynatma Ekranı</h4>
-                    <iframe width="100%" height="250" src="https://www.youtube-nocookie.com/embed/9gVQ9kyUNfM" title="HTML Video" frameborder="0" allowfullscreen style="border-radius:6px;"></iframe>
+                    <h4 data-i18n="video_screen_title">Video Oynatma Ekranı</h4>
+                    <!-- 4 Dilli Video Oynatıcı Alanı -->
+                    <div id="video-container-2" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius:6px; margin-top:10px;">
+                        <!-- iframe dinamik olarak JavaScript ile dile göre yüklenecek -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -324,7 +326,7 @@
     </div>
 
     <script>
-        // Translations Dictionary (TR, EN, DE, FR)
+        // 4 Dilli Kapsamlı Çeviriler, Uzun Açıklamalar ve Dile Özel Videolar
         const translations = {
             tr: {
                 news_title: "Gerçek Zamanlı Kodlama ve Teknoloji Haberleri",
@@ -336,17 +338,26 @@
                 lesson_title: "Dersler: Okuyarak Anla & İzle",
                 btn_read: "Okuyarak Anla",
                 btn_watch: "İzle & Video",
-                l1_read_head: "Metin Anlatımı (Okuma Modu)",
-                l1_read_desc: "Python, okunabilirliği yüksek, öğrenmesi son derece kolay modern bir programlama dilidir. Değişken tanımlama, döngüler ve fonksiyonlar ile harika yazılımlar geliştirebilirsin.",
-                l2_read_head: "Metin Anlatımı (Okuma Modu)",
-                l2_read_desc: "Web sitelerinin iskeletini HTML oluşturur, görsel tasarımı ve stillerini ise CSS yönetir. Duyarlı (responsive) tasarımlar yaparak her ekranda harika duran siteler tasarlayabilirsin.",
-                direct_video_link: "Doğrudan Video Bağlantısına Git (İzlemek istersen)",
+                video_screen_title: "Video Oynatma Ekranı",
+                
+                l1_title_text: "Modül 1: Python ile Sıfırdan İleri Düzey Programlama",
+                l1_read_head: "Detaylı Kapsamlı Anlatım (Eğitmen Notları)",
+                l1_read_desc: `Bu eğitim modülünde Python programlama dilinin temel yapı taşlarını en ince detayına kadar öğreniyoruz.\n\n• Değişkenler ve Veri Tipleri: Bilgisayarda veri saklama mantığı, int, float, string ve boolean yapıları.\n• Koşullu Durumlar (If-Else): Programların karar mekanizmaları oluşturması ve mantıksal sorgulamalar.\n• Döngüler (For & While): Tekrarlayan görevleri otomatikleştirme ve veri listeleri üzerinde gezinme.\n• Fonksiyonlar ve Modüller: Kod tekrarını önleyen yeniden kullanılabilir bloklar yazma becerisi.\n\nEğitmen Anlatımı Özeti: "Arkadaşlar bugün Python dünyasına ilk adımı atıyoruz. Yazılımın temeli mantıktır; bu kuralları kavradığınızda kendi oyunlarınızı, yapay zeka araçlarınızı ve masaüstü uygulamalarınızı rahatlıkla kodlayabileceksiniz!"`,
+                
+                l2_title_text: "Modül 2: HTML5 ve CSS3 ile Modern Web Geliştirme",
+                l2_read_head: "Detaylı Kapsamlı Anlatım (Eğitmen Notları)",
+                l2_read_desc: `Bu modülde internet sitelerinin nasıl inşa edildiğini sıfırdan profesyonel seviyeye kadar inceliyoruz.\n\n• HTML5 Etiketleri ve Yapısı: Header, section, footer, div ve form bileşenleri ile sayfa iskeleti oluşturma.\n• CSS3 Tasarım ve Stillendirme: Renkler, yazı tipleri, box-model ve modern Flexbox / Grid düzenleri.\n• Responsive (Duyarlı) Tasarım: Mobil, tablet ve masaüstü ekranlarda kusursuz görünen arayüzler tasarlama.\n\nEğitmen Anlatımı Özeti: "Web geliştirmede hayal gücünüzün sınırları yoktur. HTML iskeletimizse, CSS de onun makyajı ve kıyafetidir. Bugün harika duyarlı web tasarımları yapmayı öğreneceğiz!"`,
+
                 news1_title: "Python 3.14+ Sürümleri Yayında!",
                 news1_desc: "Performans iyileştirmeleri ve yeni hata ayıklama araçlarıyla geliştirildi.",
                 news2_title: "VS Code Yeni Güncellemesi",
                 news2_desc: "Yapay zeka entegrasyonları ve yeni temalar eklendi.",
                 news3_title: "Web Geliştirmede Son Trendler",
-                news3_desc: "Modern CSS grid yapıları ve hafif kütüphaneler ön planda."
+                news3_desc: "Modern CSS grid yapıları ve hafif kütüphaneler ön planda.",
+
+                // TR Videoları (YouTube ID'leri)
+                v1: "_uQrJ0TkZlc",
+                v2: "9gVQ9kyUNfM"
             },
             en: {
                 news_title: "Real-Time Coding & Tech News",
@@ -358,17 +369,26 @@
                 lesson_title: "Lessons: Read & Understand or Watch",
                 btn_read: "Read & Understand",
                 btn_watch: "Watch Video",
-                l1_read_head: "Text Explanation (Reading Mode)",
-                l1_read_desc: "Python is a modern programming language with high readability and easy learning curve. You can build amazing software using variables, loops, and functions.",
-                l2_read_head: "Text Explanation (Reading Mode)",
-                l2_read_desc: "HTML builds the skeleton of websites, while CSS manages visual styles and layout. Create responsive designs that look stunning on any screen.",
-                direct_video_link: "Go to Direct Video Link (If you want to watch)",
+                video_screen_title: "Video Player Screen",
+                
+                l1_title_text: "Module 1: Complete Python Programming from Scratch",
+                l1_read_head: "Detailed Comprehensive Explanation (Instructor Notes)",
+                l1_read_desc: `In this training module, we learn the fundamental building blocks of Python programming in detail.\n\n• Variables & Data Types: How computers store data, covering int, float, string, and boolean structures.\n• Conditional Statements (If-Else): Building decision-making mechanisms and logical queries.\n• Loops (For & While): Automating repetitive tasks and iterating over collections.\n• Functions & Modules: Writing reusable code blocks to prevent redundancy.\n\nInstructor Quote: "Hello everyone! Today we are taking our first steps into Python. Software is built on logic; once you grasp these rules, you will easily build games, AI tools, and desktop apps!"`,
+                
+                l2_title_text: "Module 2: Modern Web Development with HTML5 & CSS3",
+                l2_read_head: "Detailed Comprehensive Explanation (Instructor Notes)",
+                l2_read_desc: `In this module, we examine how websites are built from scratch to a professional level.\n\n• HTML5 Tags & Structure: Creating page skeletons using header, section, footer, div, and forms.\n• CSS3 Design & Styling: Colors, typography, box-model, and modern Flexbox / Grid layouts.\n• Responsive Design: Designing layouts that look stunning on mobile, tablet, and desktop screens.\n\nInstructor Quote: "There are no limits to your imagination in web dev. If HTML is the skeleton, CSS is the style. Today we'll master responsive web design!"`,
+
                 news1_title: "Python 3.14+ Releases Are Live!",
                 news1_desc: "Enhanced with performance upgrades and powerful debugging tools.",
                 news2_title: "VS Code Major Update",
                 news2_desc: "AI assistant integrations and brand new themes are now available.",
                 news3_title: "Latest Trends in Web Dev",
-                news3_desc: "Modern CSS grid frameworks and lightweight libraries are leading."
+                news3_desc: "Modern CSS grid frameworks and lightweight libraries are leading.",
+
+                // EN Videoları
+                v1: "rfscVS0vtbw",
+                v2: "kUMe1FH4CHE"
             },
             de: {
                 news_title: "Echtzeit-Coding- und Tech-Nachrichten",
@@ -380,17 +400,26 @@
                 lesson_title: "Lektionen: Lesen & Verstehen oder Ansehen",
                 btn_read: "Lesen & Verstehen",
                 btn_watch: "Video Ansehen",
-                l1_read_head: "Texterklärung (Lesemodus)",
-                l1_read_desc: "Python ist eine moderne Programmiersprache mit hoher Lesbarkeit. Entwickeln Sie tolle Software mit Variablen, Schleifen und Funktionen.",
-                l2_read_head: "Texterklärung (Lesemodus)",
-                l2_read_desc: "HTML bildet das Grundgerüst, während CSS das Design steuert. Erstellen Sie responsive Layouts für alle Bildschirme.",
-                direct_video_link: "Direkter Video-Link (Zum Anschauen)",
+                video_screen_title: "Video-Wiedergabebildschirm",
+                
+                l1_title_text: "Modul 1: Python Programmierung von Grund auf",
+                l1_read_head: "Ausführliche Erklärung (Dozentennotizen)",
+                l1_read_desc: `In diesem Modul lernen wir die grundlegenden Bausteine der Python-Programmierung.\n\n• Variablen & Datentypen: Wie Computer Daten speichern (Int, Float, String, Boolean).\n• Bedingte Anweisungen (If-Else): Erstellung von Entscheidungsstrukturen.\n• Schleifen (For & While): Automatisierung wiederkehrender Aufgaben.\n• Funktionen & Module: Wiederverwendbare Codeblöcke erstellen.\n\nDozenten-Zitat: "Hallo zusammen! Heute machen wir unsere ersten Schritte in Python. Software basiert auf Logik!"`,
+                
+                l2_title_text: "Modul 2: Modernes Webdesign mit HTML5 & CSS3",
+                l2_read_head: "Ausführliche Erklärung (Dozentennotizen)",
+                l2_read_desc: `In diesem Modul untersuchen wir den Aufbau von Webseiten von Grund auf.\n\n• HTML5-Tags & Struktur: Seiten-Skelett mit Header, Section, Footer und Formularen.\n• CSS3 Design & Styling: Farben, Typografie und moderne Flexbox / Grid Layouts.\n• Responsive Design: Perfekte Darstellung auf allen Bildschirmen.\n\nDozenten-Zitat: "HTML ist das Skelett, CSS ist das Styling. Heute lernen wir fantastisches Webdesign!"`,
+
                 news1_title: "Python 3.14+ Releases sind da!",
                 news1_desc: "Mit Leistungsverbesserungen und neuen Debugging-Tools.",
                 news2_title: "VS Code Neues Update",
                 news2_desc: "KI-Integrationen und neue Themes wurden hinzugefügt.",
                 news3_title: "Neueste Trends im Webdesign",
-                news3_desc: "Moderne CSS-Grid-Strukturen stehen im Vordergrund."
+                news3_desc: "Moderne CSS-Grid-Strukturen stehen im Vordergrund.",
+
+                // DE Videoları
+                v1: "Z1Yd7upQsXY",
+                v2: "Y2V6yj0FSAc"
             },
             fr: {
                 news_title: "Actualités Code & Tech en Temps Réel",
@@ -402,17 +431,26 @@
                 lesson_title: "Leçons: Lire & Comprendre ou Regarder",
                 btn_read: "Lire & Comprendre",
                 btn_watch: "Regarder la Vidéo",
-                l1_read_head: "Explication Textuelle (Mode Lecture)",
-                l1_read_desc: "Python est un langage moderne très lisible et facile à apprendre. Créez des logiciels incroyables avec des boucles et des fonctions.",
-                l2_read_head: "Explication Textuelle (Mode Lecture)",
-                l2_read_desc: "HTML structure les sites web tandis que CSS gère le design visuel. Réalisez des designs responsifs pour tous les écrans.",
-                direct_video_link: "Aller au lien vidéo direct (Si vous souhaitez regarder)",
+                video_screen_title: "Écran de Lecture Vidéo",
+                
+                l1_title_text: "Module 1: Programmation Python de zéro",
+                l1_read_head: "Explication Détaillée (Notes du Formateur)",
+                l1_read_desc: `Dans ce module, nous apprenons les bases fondamentales de la programmation Python.\n\n• Variables et types de données: Stockage des données (int, float, string, boolean).\n• Instructions conditionnelles (If-Else): Prise de décision logique.\n• Boucles (For & While): Automatisation des tâches répétitives.\n• Fonctions & Modules: Création de blocs de code réutilisables.\n\nCitation du formateur: "Bonjour à tous! Aujourd'hui nous faisons nos premiers pas en Python!"`,
+                
+                l2_title_text: "Module 2: Développement Web Moderne HTML5 & CSS3",
+                l2_read_head: "Explication Détaillée (Notes du Formateur)",
+                l2_read_desc: `Dans ce module, nous examinons la création de sites web de zéro à un niveau professionnel.\n\n• Balises HTML5 & Structure: Squelette de page (header, section, footer, formulaires).\n• Design CSS3 & Styles: Couleurs, typographie, modèles de boîtes et grilles Flexbox.\n• Design Responsif: Création d'interfaces adaptées à tous les écrans.\n\nCitation du formateur: "Si HTML est le squelette, CSS est le design. Maîtrisons le web design!"`,
+
                 news1_title: "Sortie de Python 3.14+ !",
                 news1_desc: "Améliorations des performances et nouveaux outils de débogage.",
                 news2_title: "Mise à jour majeure de VS Code",
                 news2_desc: "Intégrations d'IA et de nouveaux thèmes disponibles.",
                 news3_title: "Dernières tendances web",
-                news3_desc: "Les grilles CSS modernes et les bibliothèques légères dominent."
+                news3_desc: "Les grilles CSS modernes et les bibliothèques légères dominent.",
+
+                // FR Videoları
+                v1: "5mXJzwM_k1U",
+                v2: "3JluqTojuME"
             }
         };
 
@@ -453,13 +491,24 @@
 
         function changeLanguage(lang) {
             localStorage.setItem('woc_lang', lang);
+            const t = translations[lang];
+
             // Update static texts
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if(translations[lang][key]) {
-                    el.innerText = translations[lang][key];
+                if(t[key]) {
+                    el.innerText = t[key];
                 }
             });
+
+            // Update long descriptions dynamically
+            document.getElementById('l1-desc-text').innerText = t.l1_read_desc;
+            document.getElementById('l2-desc-text').innerText = t.l2_read_desc;
+
+            // Update Videos dynamically based on selected language
+            document.getElementById('video-container-1').innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${t.v1}" title="Python Video" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>`;
+            document.getElementById('video-container-2').innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${t.v2}" title="Web Video" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>`;
+
             loadNews(lang);
         }
 
