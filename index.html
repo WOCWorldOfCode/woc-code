@@ -224,7 +224,7 @@
         <!-- KAPSAMLI YAZILIM DİLLERİ VE VİDEO EĞİTİM MERKEZİ -->
         <section>
             <h2 id="main-section-title"><i class="fa-solid fa-graduation-cap"></i> Kapsamlı Yazılım Dilleri & Video Eğitim Rehberi</h2>
-            <p style="margin-bottom: 20px; opacity: 0.8;" id="main-section-desc">Aşağıdan öğrenmek istediğin yazılım dilini seçebilir, ister detaylı kapsamlı 3-4 sayfalık okuma modunu inceleyebilir ister 4 farklı dildeki profesyonel eğitim videolarını izleyebilirsin.</p>
+            <p style="margin-bottom: 20px; opacity: 0.8;" id="main-section-desc">Aşağıdan öğrenmek istediğin yazılım dilini seçebilir, ister detaylı kapsamlı okuma modunu inceleyebilir ister 4 farklı dildeki profesyonel eğitim videolarını izleyebilirsin.</p>
 
             <!-- Dil Sekmeleri -->
             <div class="lang-tabs">
@@ -246,37 +246,21 @@
                 
                 <div id="py-read" class="content-box">
                     <strong>BÖLÜM 1: Giriş ve Temel Kavramlar</strong>
-                    Python, Guido van Rossum tarafından 1991 yılında geliştirilmiş yüksek seviyeli, yorumlanabilir bir programlama dilidir. Sözdizimi (syntax) insan diline çok yakın olduğu için öğrenmesi oldukça kolaydır. Değişkenler, verileri hafızada tutmamızı sağlayan etiketlerdir. Python'da değişken tanımlarken tür belirtmemiz gerekmez (örneğin: `yas = 13`, `isim = "Yunus"`).
+                    Python, Guido van Rossum tarafından 1991 yılında geliştirilmiş yüksek seviyeli, yorumlanabilir bir programlama dilidir. Sözdizimi insan diline çok yakın olduğu için öğrenmesi oldukça kolaydır. Değişkenler, verileri hafızada tutmamızı sağlayan etiketlerdir.
 
                     <strong>BÖLÜM 2: Veri Tipleri ve Operatörler</strong>
-                    - int (Integer): Tam sayılar (Örn: 42, -5)
-                    - float: Ondalıklı sayılar (Örn: 3.14, 0.05)
-                    - str (String): Metin ifadeleri (Örn: "Merhaba Dünya")
-                    - bool (Boolean): Mantıksal değerler (True veya False)
-                    Matematiksel işlemler (+, -, *, /, //, **) ve karşılaştırma operatörleri (==, !=, >, <) yazılımın temel matematiğini oluşturur.
+                    - int: Tam sayılar
+                    - float: Ondalıklı sayılar
+                    - str: Metin ifadeleri
+                    - bool: Mantıksal değerler (True / False)
 
-                    <strong>BÖLÜM 3: Koşullu Durumlar ve Karar Yapıları (If - Elif - Else)</strong>
-                    Programların akıllı kararlar almasını sağlar. Kullanıcıdan alınan nota göre geçip kalma durumunu hesaplayan klasik bir örnek:
-                    ```python
-                    not_degeri = int(input("Notunuzu girin: "))
-                    if not_degeri >= 50:
-                        print("Tebrikler, dersten geçtiniz!")
-                    else:
-                        print("Maalesef kaldınız, tekrar denemelisiniz.")
-                    ```
-
-                    <strong>BÖLÜM 4: Döngüler (For ve While)</strong>
-                    Tekrarlayan kod bloklarını tek tek yazmak yerine döngüleri kullanırız. `for` döngüsü genellikle belirli bir liste üzerinde dönerken, `while` döngüsü bir koşul sağlandığı sürece çalışmaya devam eder.
-
-                    <strong>BÖLÜM 5: Fonksiyonlar ve Modüler Programlama</strong>
-                    Kod tekrarını önlemek için fonksiyonlar (`def fonksiyon_adi():`) kullanılır. Kodunuzu parçalara ayırarak projenizi düzenli tutmanızı sağlar. Yapay zeka, veri bilimi, otomasyon ve oyun geliştirme dünyasında Python bugünün en güçlü silahıdır!
+                    <strong>BÖLÜM 3: Koşullu Durumlar (If-Else) ve Döngüler</strong>
+                    Programların karar mekanizmaları oluşturmasını sağlar. For ve While döngüleriyle tekrarlayan işlemleri otomatikleştiririz.
                 </div>
 
                 <div id="py-watch" class="content-box">
                     <p style="margin-bottom: 10px; font-weight: bold;" class="video-instruction">Seçtiğiniz dile göre güncellenen Python Eğitim Videosu:</p>
-                    <div class="video-wrapper" id="video-py">
-                        <!-- Dinamik Video -->
-                    </div>
+                    <div class="video-wrapper" id="video-py"></div>
                 </div>
             </div>
 
@@ -289,17 +273,8 @@
                 </div>
                 
                 <div id="js-read" class="content-box">
-                    <strong>BÖLÜM 1: JavaScript Dünyasına Giriş</strong>
-                    JavaScript, tarayıcı üzerinde çalışan ve web sitelerine etkileşim, dinamik özellikler ve animasyonlar kazandıran en popüler programlama dilidir. Günümüzde Node.js sayesinde sadece tarayıcıda değil, sunucu tarafında da (backend) aktif olarak kullanılmaktadır.
-
-                    <strong>BÖLÜM 2: Değişkenler (Let, Const, Var) ve Veri Türleri</strong>
-                    Modern JavaScript'te değişken tanımlamak için `let` (değiştirilebilir) ve `const` (sabit) anahtar kelimeleri kullanılır. Nesneler (Objects), diziler (Arrays) ve fonksiyonlar dilin temel taşlarıdır.
-
-                    <strong>BÖLÜM 3: DOM Manipülasyonu ve Olaylar (Events)</strong>
-                    HTML sayfasındaki elementleri JavaScript ile seçip değiştirebiliriz. Örneğin bir butona tıklandığında arka plan rengini değiştiren sistemler DOM manipülasyonu ile yapılır. `document.getElementById()` veya `document.querySelector()` en sık kullanılan komutlardır.
-
-                    <strong>BÖLÜM 4: Asenkron Programlama (Async/Await, Fetch API)</strong>
-                    İnternet üzerinden veri çekmek (API istekleri), sunucu ile haberleşmek ve sayfayı dondurmadan arka planda işlem yapmak için asenkron yapılar kullanılır. Modern web uygulamalarının kalbi buradadır.
+                    <strong>BÖLÜM 1: JavaScript Temelleri</strong>
+                    Tarayıcı üzerinde çalışan ve web sitelerine dinamik özellikler kazandıran dildir. Let ve Const tanımlamaları, fonksiyonlar ve DOM manipülasyonu temel konularıdır.
                 </div>
 
                 <div id="js-watch" class="content-box">
@@ -310,29 +285,15 @@
 
             <!-- 3. C++ MODÜLÜ -->
             <div id="mod-cpp" class="module-content">
-                <h3 style="color: var(--secondary-color);">C++ ile Yüksek Performanslı Yazılım ve Oyun Geliştirme</h3>
+                <h3 style="color: var(--secondary-color);">C++ ile Yüksek Performanslı Yazılım</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleBox('cpp-read', 'cpp-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
                     <button onclick="toggleBox('cpp-watch', 'cpp-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
                 </div>
                 
                 <div id="cpp-read" class="content-box">
-                    <strong>BÖLÜM 1: C++ Temelleri ve Bellek Yönetimi</strong>
-                    C++, Bjarne Stroustrup tarafından geliştirilmiş güçlü, nesne yönelimli ve yüksek performanslı bir sistem programlama dilidir. Oyun motorları (Unreal Engine), işletim sistemleri ve yüksek hızlı uygulamalar C++ ile yazılır.
-
-                    <strong>BÖLÜM 2: Temel Sözdizimi ve Girdi/Çıktı</strong>
-                    C++ programları `main()` fonksiyonu ile başlar. Ekrana yazı yazdırmak için `std::cout`, kullanıcıdan veri almak için ise `std::cin` kullanılır.
-                    ```cpp
-                    #iostream
-                    using namespace std;
-                    int main() {
-                        cout << "Merhaba C++ Dunyasi!";
-                        return 0;
-                    }
-                    ```
-
-                    <strong>BÖLÜM 3: Nesne Yönelimli Programlama (OOP)</strong>
-                    Sınıflar (Classes), nesneler (Objects), kalıtım (Inheritance) ve çok biçimlilik (Polymorphism) konuları büyük ölçekli yazılımların belkemiğidir. Bellek yönetimi (Pointer ve Referanslar) C++'ı diğer dillerden ayıran en önemli özelliktir.
+                    <strong>BÖLÜM 1: C++ ve Bellek Yönetimi</strong>
+                    Oyun motorları ve sistem yazılımlarında kullanılan güçlü bir dildir. Nesne yönelimli programlama (OOP) altyapısı sunar.
                 </div>
 
                 <div id="cpp-watch" class="content-box">
@@ -343,21 +304,15 @@
 
             <!-- 4. C# MODÜLÜ -->
             <div id="mod-csharp" class="module-content">
-                <h3 style="color: var(--secondary-color);">C# ve .NET ile Masaüstü & Oyun (Unity) Geliştirme</h3>
+                <h3 style="color: var(--secondary-color);">C# ve .NET ile Uygulama Geliştirme</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleBox('cs-read', 'cs-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
                     <button onclick="toggleBox('cs-watch', 'cs-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
                 </div>
                 
                 <div id="cs-read" class="content-box">
-                    <strong>BÖLÜM 1: C# Diline Giriş (.NET Framework / .NET Core)</strong>
-                    Microsoft tarafından geliştirilen C# (C-Sharp), modern, güvenli ve nesne yönelimli bir programlama dilidir. Özellikle Unity oyun motoru ile oyun geliştirmek ve Windows masaüstü uygulamaları yazmak için endüstri standardıdır.
-
-                    <strong>BÖLÜM 2: Değişkenler, Sınıflar ve Metotlar</strong>
-                    C# tam anlamıyla nesne yönelimli bir dildir. Her şey sınıflar (`class`) içerisinde yer alır. Güçlü tür denetimi (Strong typing) sayesinde hatalar derleme aşamasında yakalanır.
-
-                    <strong>BÖLÜM 3: Unity ile Oyun Kodlama Temelleri</strong>
-                    C# kullanarak karakter hareketleri, kamera açıları, puan sistemleri ve yapay zeka düşman kodları yazabilir; hayalinizdeki 2D ve 3D oyunları gerçeğe dönüştürebilirsiniz.
+                    <strong>BÖLÜM 1: C# Dilinin Temelleri</strong>
+                    Microsoft tarafından geliştirilen, Unity oyun motorunda ve masaüstü uygulamalarında kullanılan nesne yönelimli dildir.
                 </div>
 
                 <div id="cs-watch" class="content-box">
@@ -368,18 +323,15 @@
 
             <!-- 5. JAVA MODÜLÜ -->
             <div id="mod-java" class="module-content">
-                <h3 style="color: var(--secondary-color);">Java ile Kurumsal Uygulamalar ve Android Geliştirme</h3>
+                <h3 style="color: var(--secondary-color);">Java ile Kurumsal Sistemler</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleBox('java-read', 'java-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
                     <button onclick="toggleBox('java-watch', 'java-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
                 </div>
                 
                 <div id="java-read" class="content-box">
-                    <strong>BÖLÜM 1: Java Mimarisi ve "Write Once, Run Anywhere"</strong>
-                    Java, JVM (Java Virtual Machine) sayesinde yazıldığı kodun her platformda çalışabilmesini sağlayan efsanevi bir dildir. Kurumsal bankacılık sistemlerinden Android mobil uygulamalarına kadar milyarlarca cihazda çalışır.
-
-                    <strong>BÖLÜM 2: Nesne Yönelimli Programlama (OOP) İlkeleri</strong>
-                    Kapsülleme (Encapsulation), Kalıtım (Inheritance), Soyutlama (Abstraction) ve Çok Biçimlilik (Polymorphism) Java'nın temel felsefesidir. Büyük projelerin düzenli ve hatasız yönetilmesini sağlar.
+                    <strong>BÖLÜM 1: Java Mimarisi</strong>
+                    JVM tabanlı çalışan, Android uygulama geliştirmede ve büyük ölçekli sistemlerde yaygın olarak tercih edilen dildir.
                 </div>
 
                 <div id="java-watch" class="content-box">
@@ -390,18 +342,15 @@
 
             <!-- 6. HTML & CSS MODÜLÜ -->
             <div id="mod-htmlcss" class="module-content">
-                <h3 style="color: var(--secondary-color);">HTML5 ve CSS3 ile Web Tasarımının Temelleri</h3>
+                <h3 style="color: var(--secondary-color);">HTML5 ve CSS3 ile Web Tasarımı</h3>
                 <div class="toggle-btns">
                     <button onclick="toggleBox('html-read', 'html-watch')"><i class="fa-solid fa-book-open"></i> <span class="btn-text-read">Okuyarak Anla (Detaylı Notlar)</span></button>
                     <button onclick="toggleBox('html-watch', 'html-read')"><i class="fa-solid fa-play"></i> <span class="btn-text-watch">Videoyu İzle</span></button>
                 </div>
                 
                 <div id="html-read" class="content-box">
-                    <strong>BÖLÜM 1: HTML5 İskelet Yapısı</strong>
-                    HTML (HyperText Markup Language), web sitelerinin metin, görsel ve bağlantı iskeletini oluşturur. `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>` etiketleri her web sayfasının doğuş noktasındadır.
-
-                    <strong>BÖLÜM 2: CSS3 ile Görsel Tasarım ve Flexbox</strong>
-                    CSS, web sitelerine renk, arka plan, yazı tipi, gölge ve düzen kazandırır. Modern Flexbox ve Grid sistemleri ile telefon ve bilgisayarlara kusursuz uyum sağlayan (responsive) arayüzler tasarlayabilirsiniz.
+                    <strong>BÖLÜM 1: Web Tasarım Temelleri</strong>
+                    Web sitelerinin iskeletini oluşturan HTML ve görsel stillerini yöneten CSS ile modern arayüzler tasarlayın.
                 </div>
 
                 <div id="html-watch" class="content-box">
@@ -417,7 +366,6 @@
     </div>
 
     <script>
-        // 4 Farklı Arayüz Dili için Çeviriler (Türkçe, İngilizce, Almanca, Fransızca)
         const uiTranslations = {
             tr: {
                 mainTitle: "Kapsamlı Yazılım Dilleri & Video Eğitim Rehberi",
@@ -429,7 +377,7 @@
             },
             en: {
                 mainTitle: "Comprehensive Programming Languages & Video Training Hub",
-                mainDesc: "Select a programming language below to read detailed comprehensive study notes or watch professional training videos in 4 different languages.",
+                mainDesc: "Select a programming language below to read detailed study notes or watch professional training videos in 4 different languages.",
                 btnRead: "Read & Understand (Detailed Notes)",
                 btnWatch: "Watch Video",
                 vidText: "Training video updated according to your selected language:",
@@ -453,7 +401,7 @@
             }
         };
 
-        // 4 Farklı Dilde Çalışan Garantili YouTube Video ID'leri (Python, JS, C++, C#, Java, HTML)
+        // Kesin olarak çalışan, güncel ve embed izinli YouTube Video ID'leri (TR, EN, DE, FR)
         const videosData = {
             tr: {
                 py: "_uQrJ0TkZlc",
@@ -492,23 +440,17 @@
         let currentActiveLang = 'python';
         let currentInterfaceLang = 'tr';
 
-        // Dil Modüllerini Değiştirme (Python, JS, C++ vb.)
         function switchLanguageModule(langKey) {
             currentActiveLang = langKey;
-            
-            // Sekmelerin aktiflik durumunu güncelle
             document.querySelectorAll('.lang-tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
 
-            // İçeriklerin görünürlüğünü güncelle
             document.querySelectorAll('.module-content').forEach(mod => mod.classList.remove('active'));
             document.getElementById('mod-' + langKey).classList.add('active');
 
-            // Videoyu güncelle
             updateVideoPlayer();
         }
 
-        // Okuma / İzleme Kutularını Açıp Kapatma
         function toggleBox(showId, hideId) {
             const showEl = document.getElementById(showId);
             const hideEl = document.getElementById(hideId);
@@ -516,13 +458,11 @@
             showEl.classList.toggle('active');
             hideEl.classList.remove('active');
 
-            // Eğer video açıldıysa iframe'i yükle
             if(showId.includes('watch')) {
                 updateVideoPlayer();
             }
         }
 
-        // Video Oynatıcıyı Güncelleme (Seçilen dil ve programlama diline göre)
         function updateVideoPlayer() {
             const videoId = videosData[currentInterfaceLang][currentActiveLang];
             const containerMap = {
@@ -541,12 +481,10 @@
             }
         }
 
-        // Tema Değiştirme
         function changeTheme(theme) {
             document.body.setAttribute('data-theme', theme);
         }
 
-        // Arayüz Dilini Değiştirme (Türkçe, İngilizce, Almanca, Fransızca)
         function changeUCLanguage(lang) {
             currentInterfaceLang = lang;
             const t = uiTranslations[lang];
@@ -555,12 +493,10 @@
             document.getElementById('main-section-desc').innerText = t.mainDesc;
             document.getElementById('footer-text').innerHTML = t.footer;
 
-            // Tüm buton metinlerini güncelle
             document.querySelectorAll('.btn-text-read').forEach(el => el.innerText = t.btnRead);
             document.querySelectorAll('.btn-text-watch').forEach(el => el.innerText = t.btnWatch);
             document.querySelectorAll('.video-instruction').forEach(el => el.innerText = t.vidText);
 
-            // Videoları yeni dile göre tazele
             updateVideoPlayer();
         }
     </script>
